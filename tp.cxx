@@ -3,29 +3,19 @@ using namespace std;
 
 int main()
 {
-    int n;
-    cin >> n;
+    int num;
+    cin >> num;
 
-    vector<int> nums(n);
-    for (int i = 0; i < n; i++)
-    {
-        cin >> nums[i];
-    }
+    int ans = 0, rem;
 
-    int i = 0;
-    for (int j = 0; j < n; j++)
+    while (num > 0)
     {
-        if (nums[j] != 0)
-        {
-            swap(nums[i], nums[j]);
-            i++;
-        }
-    }
+        rem = num % 10;
+        num /= 10;
 
-    for (int x : nums)
-    {
-        cout << x << " ";
+        ans = ans * 10 + rem;
     }
+    cout << ans;
 
     return 0;
 }
